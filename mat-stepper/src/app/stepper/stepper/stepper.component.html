@@ -1,0 +1,23 @@
+<mat-horizontal-stepper
+  (selectionChange)="selectionChange($event)"
+  [selectedIndex]="selectedIndex"
+>
+  <mat-step [label]="'first'">
+    <ng-template matStepContent>
+      <app-first-step *ngIf="selectedIndex === 0"></app-first-step>
+    </ng-template>
+    <div>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step [label]="'two'">
+    <ng-template matStepContent>
+      <app-second-step *ngIf="selectedIndex === 1"></app-second-step>
+    </ng-template>
+  </mat-step>
+  <mat-step [label]="'three'">
+    <ng-template matStepContent>
+      <app-third-step *ngIf="selectedIndex === 2"></app-third-step>
+    </ng-template>
+  </mat-step>
+</mat-horizontal-stepper>
